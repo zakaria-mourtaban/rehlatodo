@@ -34,6 +34,8 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+
+
 /**
  * Middleware to get user from token (optional auth)
  * This doesn't reject the request if no token is present

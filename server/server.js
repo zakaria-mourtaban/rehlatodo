@@ -26,7 +26,7 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: process.env.CORS_ORIGIN,
+  origin: "http://localhost:5173",
   credentials: true // Allow cookies to be sent with requests
 }));
 app.use(bodyParser.json());

@@ -1,7 +1,7 @@
 import express from 'express';
 import { Tag, Card, Column } from '../models/index.js';
 import sequelize from '../database/config.js';
-
+import { Op } from 'sequelize';
 const router = express.Router();
 
 // Get all tags for logged-in user
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     
     const tags = await Tag.findAll({
       where: {
-        [sequelize.Op.or]: [
+        [Op.or]: [
           { userId },
           { userId: null }
         ]
@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
     const existingTag = await Tag.findOne({
       where: {
         name,
-        [sequelize.Op.or]: [
+        [Op.or]: [
           { userId },
           { userId: null }
         ]
@@ -103,7 +103,7 @@ router.put('/:id', async (req, res) => {
         where: {
           name,
           id: { [sequelize.Op.ne]: id },
-          [sequelize.Op.or]: [
+          [Op.or]: [
             { userId },
             { userId: null }
           ]
@@ -189,7 +189,7 @@ router.get('/:id/cards', async (req, res) => {
     const cards = await Card.findAll({
       where: {
         tagId: id,
-        [sequelize.Op.or]: [
+        [Op.or]: [
           { userId },
           { userId: null }
         ]

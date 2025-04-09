@@ -40,22 +40,18 @@ This is the Express.js backend for the Rehla Todo application with PostgreSQL da
 4. Create the PostgreSQL database
    ```
    psql -U postgres
-   CREATE DATABASE kanban;
+   CREATE DATABASE todo;
    \q
    ```
 
 5. Initialize the database schema and default data
    ```
-   npm run setup-db
+   node .\database\init.js
    ```
 
 6. Start the server
    ```
-   npm start
-   ```
-   For development with auto-restart:
-   ```
-   npm run dev
+   node server.js
    ```
 
 ## API Endpoints

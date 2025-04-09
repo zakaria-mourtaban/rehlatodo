@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'kanban',
+  process.env.DB_NAME || 'todo',
   process.env.DB_USER || 'postgres',
   process.env.DB_PASSWORD || 'postgres',
   {

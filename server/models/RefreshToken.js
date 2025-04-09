@@ -13,7 +13,7 @@ const RefreshToken = sequelize.define('RefreshToken', {
     field: 'user_id'
   },
   token: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
     unique: true
   },
